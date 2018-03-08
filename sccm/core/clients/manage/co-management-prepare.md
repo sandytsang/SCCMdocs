@@ -6,7 +6,7 @@ description: Learn how to prepare your Windows 10 devices for co-management.
 keywords:
 author: dougeby
 manager: angrobe
-ms.date: 11/20/2017
+ms.date: 03/08/2018
 ms.topic: article
 ms.prod: configuration-manager
 ms.service:
@@ -57,6 +57,9 @@ For example, if you had the following values:
 You would use the following command line:
 
 ccmsetup.msi CCMSETUPCMD="/mp:https:/&#47;contoso.cloudapp.net/CCM_Proxy_MutualAuth/72057594037928100    CCMHOSTNAME=contoso.cloudapp.net/CCM_Proxy_MutualAuth/72057594037928100 SMSSiteCode=PS1 SMSMP=https:/&#47;sccmmp.corp.contoso.com AADTENANTID=72F988BF-86F1-41AF-91AB-2D7CD011XXXX AADTENANTNAME=contoso  AADCLIENTAPPID=bef323b3-042f-41a6-907a-f9faf0d1XXXX AADRESOURCEURI=https:/&#47;ConfigMgrServer”
+
+> [!Important]  
+> If you are using internal CA, and didn’t publish your CRL to internet, you need to add /nocrlcheck to installation command line. 
 
 > [!Tip]
 > You can find the command-line parameters for your site by using the following steps:     
